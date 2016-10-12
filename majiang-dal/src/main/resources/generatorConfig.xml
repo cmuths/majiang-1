@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">  
+<generatorConfiguration>
+	<classPathEntry location="D:\.m2\repository\mysql\mysql-connector-java\5.1.29\mysql-connector-java-5.1.29.jar" />
+	<context id="MySqlTables" targetRuntime="MyBatis3">  
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.2.41:3306/notification" userId="notification" password="notification">
+		</jdbcConnection>
+		
+    	<!-- model的配置  -->
+		<javaModelGenerator targetPackage="com.hejinwei.majiang.dal.mybatis.model" targetProject="D:\workspace\majiang\majiang-dal\src\main\java">
+			<property name="enableSubPackages" value="true"/>
+			<property name="trimStrings" value="true"/>
+		</javaModelGenerator>
+		
+		<!--mybatis的xml的配置  -->
+		<sqlMapGenerator targetPackage="mybatis.mapper" targetProject="D:\workspace\majiang\majiang-dal\src\main\resources">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+		
+		<!--mapper的配置  -->
+		<javaClientGenerator type="XMLMAPPER" targetPackage="com.hejinwei.majiang.dal.mybatis.mapper" targetProject="D:\workspace\majiang\majiang-dal\src\main\java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		<!--表配置  -->
+		<table tableName="sms_template" domainObjectName="SmsTemplate" ></table>
+
+  </context> 
+</generatorConfiguration>
